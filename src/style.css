@@ -1,0 +1,37 @@
+body {
+  background: #ffeee7;
+  font-family: "Roboto", sans-serif;
+}
+
+h1 {
+  font-family: "Sevillana", cursive;
+}
+
+.weather-app {
+  background: white;
+  max-width: 600px;
+  margin: 45px auto;
+  padding: 30px;
+  box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+  border-radius: 16px;
+}
+
+.message {
+  font-family: "Cedarville Cursive", cursive;
+}
+
+.first-color {
+  background: #f5eee6;
+}
+
+.second-color {
+  background: #f3d7ca;
+}
+
+.third-color {
+  background: #e6a4b4;
+}
+
+.fourth-color {
+  background: #c86b85;
+}
