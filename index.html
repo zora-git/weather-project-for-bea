@@ -15,11 +15,12 @@
   <body>
     <div class="weather-app">
       <header>
-        <form class="search-form">
+        <form class="search-form" id="search-form">
           <input
             type="search"
             placeholder="Enter a city.."
             class="search-form-input"
+            id="search-form-input"
             required
           />
           <input type="submit" value="Search" class="search-form-button" />
@@ -28,7 +29,7 @@
       <main>
         <div class="weather-app-data">
           <div>
-            <h1>Your City</h1>
+            <h1 id="city">Your City</h1>
             <p>
               Tuesday 14:49, scattered clouds
               <br />Humidity: <strong>66%</strong>, Wind:
@@ -67,5 +68,6 @@
         <a href="https://weather-for-bea.netlify.app/">Netlify</a>
       </footer>
     </div>
+    <script src="src/index.js"></script>
   </body>
 </html>
