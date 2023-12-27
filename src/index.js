@@ -59,10 +59,13 @@ function seoulWeather(seoul) {
   seoulTemperature.innerHTML = Math.round(temp);
 
   let seoulHumidity = document.querySelector("#seoul-humidity");
-  seoulHumidity.innterHTML = seoul.data.temperature.humidity;
+  seoulHumidity.innterHTML = `${seoul.data.temperature.humidity}%`;
 
   let seoulDescription = document.querySelector("#seoul-weather-description");
   seoulDescription.innerHTML = seoul.data.condition.description;
+
+  let seoulWindSpeed = document.querySelector("#seoul-wind-speed");
+  seoulWindSpeed.innerHTML = `${seoul.data.wind.speed}km/h`;
 
   let seoulEmojiElement = document.querySelector("#seoul-weather-emoji");
   seoulEmojiElement.innerHTML = `<img src="${seoul.data.condition.icon_url}" class="weather-app-emoji"/>`;
