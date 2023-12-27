@@ -6,19 +6,19 @@ function refreshWeather(response) {
   temperatureElement.innerHTML = Math.round(temperature);
 
   let humidityElement = document.querySelector("#humidity");
-  humidityElement.innerHTML = response.data.temperature.humidity;
+  humidityElement.innerHTML = ` ${response.data.temperature.humidity}%`;
 
   let description = document.querySelector("#weather-description");
   description.innerHTML = response.data.condition.description;
 
   let windSpeed = document.querySelector("#wind-speed");
-  windSpeed.innerHTML = response.data.wind.speed;
+  windSpeed.innerHTML = `${response.data.wind.speed}km/h`;
 
   let emojiElement = document.querySelector("#weather-emoji");
   emojiElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="weather-app-emoji"/>`;
 
   let timeElement = document.querySelector("#time");
-  let date = new Date(response.data.time);
+  let date = new Date(response.data.time * 1000);
   timeElement.innerHTML = formatDate(date);
 }
 
@@ -63,6 +63,38 @@ function seoulWeather(seoul) {
 
   let seoulDescription = document.querySelector("#seoul-weather-description");
   seoulDescription.innerHTML = seoul.data.condition.description;
+
+  let seoulEmojiElement = document.querySelector("#seoul-weather-emoji");
+  seoulEmojiElement.innerHTML = `<img src="${seoul.data.condition.icon_url}" class="weather-app-emoji"/>`;
+
+  let seoulTimeElement = document.querySelector("#seoul-time");
+  let seoulDate = new Date(seoul.data.time * 1000);
+  seoulTimeElement.innerHTML = formatDate(seoulDate);
+}
+
+function formatDate(seoulDate) {
+  let minutes = seoulDate.getMinutes();
+  let hours = seoulDate.getHours();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[seoulDate.getDay()];
+
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  if (hours < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  return `${day} ${hours}:${minutes}`;
 }
 
 function searchSeoul() {
